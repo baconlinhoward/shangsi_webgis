@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>雙溪水庫壩址邊坡監測圖臺</title>
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- CSS -->
+    <link href="index.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <!-- 主選單開始 -->
+    <nav class="navbar navbar-default" style="background-color:white;">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- logo與title -->
+          <h1 id="title_name" style="font-family:Microsoft JhengHei; font-weight: bold;">雙溪水庫壩址邊坡監測圖臺</h1>
+          <!-- 水利署logo -->
+          <a class="navbar-brand" href="http://www.wra.gov.tw/">
+            <img alt="Brand" src="icon_1.png">
+          </a>
+          <!-- 水工所logo -->
+          <a class="navbar-brand" href="http://www.hy.ntu.edu.tw/">
+            <img alt="Brand" src="icon_2.png">
+          </a>
+          <!-- 中興社logo -->
+          <a class="navbar-brand" href="https://www.sinotech.org.tw/zh/">
+            <img alt="Brand" src="icon_3.png">
+          </a>
+          <!-- 寰正logo -->
+          <a class="navbar-brand" href="http://yhc6988.myweb.hinet.net/">
+            <img alt="Brand" src="icon_4.png">
+          </a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" style="color:black;">Link I</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:black;">Link II <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+
+    <!-- 主選單結束 -->
+
+    <!-- 計畫介紹頁面開始 -->
+    <div class="jumbotron">
+      <div class="container">
+        <h2 id="sub_title" style="font-family:Microsoft JhengHei; font-weight: bold;">示範圖台功能說明</h2>
+        <div class="col-xs-13 col-sm-4">
+        <h3 style="font-family:Microsoft JhengHei; font-weight: bold;">綠色燈號 <img alt="green_light" src="./pic/green_light.png" class="manual_light"></h3>
+        <p style="font-family:Microsoft JhengHei;">當監測儀器的監測燈號為綠色時，表示目前監測數據數值並無災害發生的可能性。
+        </p>
+        </div>
+        <div class="col-xs-13 col-sm-4">
+        <h3 style="font-family:Microsoft JhengHei; font-weight: bold;">黃色燈號 <img alt="green_light" src="./pic/yellow_light.png" class="manual_light"></h3>
+        <p style="font-family:Microsoft JhengHei;">當監測儀器的監測燈號為黃色燈號時，表示目前監測數據數值具中高潛勢的災害發生可能性，故擬進行相關災害防救與避難的因應對策。
+        </p>
+        </div>
+        <div class="col-xs-13 col-sm-4">
+        <h3 style="font-family:Microsoft JhengHei; font-weight: bold;">紅色燈號 <img alt="green_light" src="./pic/red_light.png" class="manual_light"></h3>
+        <p style="font-family:Microsoft JhengHei;">當監測儀器的監測燈號為紅色燈號時，表示目前監測數據數值具高潛勢的災害發生可能性，故需迫切決定災害防救與避難的因應對策。
+        </p>
+        </div>
+      </div>
+    </div>
+    <!-- 計畫介紹頁面結束 -->
+
+    <!-- 地圖展示頁面開始 -->
+    <div class="container" id="map_iot1">
+      <div class="row">
+        <div class="col-xs-26 col-sm-6">
+          <div class="embed-responsive embed-responsive-16by9" id="map">
+            <iframe class="embed-responsive-item" src="./map/map.html">
+            </iframe>
+          </div>      
+        </div>
+        <div class="col-xs-13 col-sm-6">
+          <h3 style="font-family:Microsoft JhengHei; font-weight:bold;" id="IoT_1">土壤含水量監測</h3>
+          <h4 style="font-family:Microsoft JhengHei;">目前預警 / 警戒燈號 <img alt="green_light" src="./pic/green_light.png" id="light"></h4>
+          <!-- <p></p>
+          <button type="button" onclick='document.getElementById("test_js").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+          <p></p> -->
+          <div style="background-color:black;" id="plotly_svg"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 地圖展示頁面結束 -->
+
+    <!-- 頁腳開始 -->
+    <div id="footer" style="font-family:Microsoft JhengHei;">
+      <div class="container">
+        <div class="row">
+            <h3 class="footertext">About Us:</h3>
+            <br>
+              <div class="col-md-3">
+                <center>
+                  <img src="footer_1.png" class="img-circle" alt="the-brains">
+                  <br>
+                  <h4 class="footertext" >水利署水規所</h4>
+                  <p class="footertext">指導單位<br>
+                </center>
+              </div>
+              <div class="col-md-3">
+                <center>
+                  <img src="footer_2.png" class="img-circle" alt="...">
+                  <br>
+                  <h4 class="footertext">臺大水工試驗所</h4>
+                  <p class="footertext">水砂觀測與地形差異分析組<br>
+                </center>
+              </div>
+              <div class="col-md-3">
+                <center>
+                  <img src="footer_3.png" class="img" alt="...">
+                  <br>
+                  <h4 class="footertext">中興工程顧問社</h4>
+                  <p class="footertext">壩址邊坡監測與平臺開發組<br>
+                </center>
+              </div>
+              <div class="col-md-3">
+                <center>
+                  <img src="footer_4.png" class="img-circle" alt="...">
+                  <br>
+                  <h4 class="footertext">寰正工程技術有限公司</h4>
+                  <p class="footertext">水文地質調查與分析組<br>
+                </center>
+              </div>
+            </div>
+            <div class="row">
+            <p><center><a href="#">Contact Stuff Here</a> <br>
+            本平臺為應用RWD概念開發，適用於各設備觀看
+            <p class="footertext">Copyright 2017</p></center></p>
+        </div>
+      </div>
+    </div>
+    <!-- 頁腳結束 -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Plotly -->
+    <script type="text/javascript" src="plot_3.js"></script>
+  </body>
+</html>

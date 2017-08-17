@@ -1,0 +1,48 @@
+html,
+nav.navbar{
+	margin-bottom: 0px;
+
+}
+#map{
+	height: 600px;
+}
+
+#title_name{
+	float: left;
+	margin-top: 8px;
+	padding-right: 20px;
+}
+
+#sub_title{
+	margin-top: 5px;
+}
+
+#light{
+	margin-top: -5px;
+}
+
+#map_iot1{
+	padding-bottom: 30px;
+
+}
+
+.jumbotron{
+	/*margin-top: 35px;
+	padding-top: 50px;*/
+	padding-bottom: : 50px;
+	text-align:justify;
+}
+
+.manual_light{
+	margin-top: -5px;
+
+}
+/*nav{
+	height: 5px;
+
+}*/
+
+/*#plotly_svg{
+	float: left;
+
+}*/
